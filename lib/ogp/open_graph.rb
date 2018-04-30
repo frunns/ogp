@@ -48,7 +48,7 @@ module OGP
 
     def parse_attributes(document)
       document.xpath('//head/meta[starts-with(@property, \'og:\')]').each do |attribute|
-        attribute_name = attribute.get('property').downcase.gsub('og:', '')
+        attribute_name = attribute.get('property').downcase.gsub('og:', '').gsub('article:', '')
         case attribute_name
           when /^image$/i
             images << OpenStruct.new(url: attribute.get('content').to_s)
