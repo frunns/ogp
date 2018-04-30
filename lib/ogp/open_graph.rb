@@ -15,6 +15,7 @@ module OGP
     attr_accessor :locales
     attr_accessor :videos
     attr_accessor :updated_time
+    attr_accessor :published_time
 
     def initialize(source)
       if source.nil? || source.empty?
