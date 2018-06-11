@@ -71,6 +71,11 @@ module OGP
             instance_variable_set("@#{attribute_name}", attribute.get('content'))
         end
       end
+      
+      document.xpath('//head/meta[starts-with(@property, \'article:\')]').each do |attribute|
+        attribute_name = attribute.get('property').downcase.gsub('article:', '').gsub('article:', '')
+        instance_variable_set("@#{attribute_name}", attribute.get('content'))
+      end
     end
 
     def attribute_exists(document, name)
