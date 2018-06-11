@@ -17,6 +17,7 @@ module OGP
     attr_accessor :updated_time
     attr_accessor :published_time
     attr_accessor :category
+    attr_accessor :section
 
     def initialize(source)
       if source.nil? || source.empty?
